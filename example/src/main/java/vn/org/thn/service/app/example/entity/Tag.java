@@ -1,5 +1,6 @@
 package vn.org.thn.service.app.example.entity;
 
+import lombok.Data;
 import vn.org.thn.service.base.db.mybatis.annotation.Entity;
 import vn.org.thn.service.base.db.mybatis.annotation.Id;
 import vn.org.thn.service.base.db.mybatis.annotation.Table;
@@ -10,6 +11,7 @@ import vn.org.thn.service.base.db.mybatis.annotation.Table;
  * {@code InsertExecutor.save()}'s "caller-supplied key" branch: the very first save for a given id
  * INSERTs, and calling save() again with the same id UPDATEs it (a true upsert, not just a create).
  */
+@Data
 @Entity
 @Table(name = "tag")
 public class Tag {
@@ -19,28 +21,4 @@ public class Tag {
 
     private String label;
     private Integer priority = 0;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getLabel() {
-        return label;
-    }
-
-    public void setLabel(String label) {
-        this.label = label;
-    }
-
-    public Integer getPriority() {
-        return priority;
-    }
-
-    public void setPriority(Integer priority) {
-        this.priority = priority;
-    }
 }

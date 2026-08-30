@@ -1,5 +1,6 @@
 package vn.org.thn.service.app.example.entity;
 
+import lombok.Data;
 import vn.org.thn.service.base.db.mybatis.annotation.Entity;
 import vn.org.thn.service.base.db.mybatis.annotation.Id;
 import vn.org.thn.service.base.db.mybatis.annotation.Table;
@@ -13,6 +14,7 @@ import java.math.BigDecimal;
  * through internally when both key columns are supplied), plus a {@link BigDecimal} column to
  * check numeric type mapping.
  */
+@Data
 @Entity
 @Table(name = "stock_level")
 public class StockLevel {
@@ -25,36 +27,4 @@ public class StockLevel {
 
     private Integer quantity = 0;
     private BigDecimal unitPrice;
-
-    public String getWarehouseCode() {
-        return warehouseCode;
-    }
-
-    public void setWarehouseCode(String warehouseCode) {
-        this.warehouseCode = warehouseCode;
-    }
-
-    public String getSku() {
-        return sku;
-    }
-
-    public void setSku(String sku) {
-        this.sku = sku;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-    public BigDecimal getUnitPrice() {
-        return unitPrice;
-    }
-
-    public void setUnitPrice(BigDecimal unitPrice) {
-        this.unitPrice = unitPrice;
-    }
 }
